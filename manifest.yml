@@ -1,0 +1,25 @@
+language: nodejs
+default_versions:
+- name: node
+  version: 6.x
+include_files:
+- VERSION
+- bin/detect
+- bin/finalize
+- bin/release
+- bin/supply
+- manifest.yml
+
+dependency_deprecation_dates:
+- version_line: 6.x
+  name: node
+  date: 2019-04-30
+  link: https://github.com/nodejs/LTS
+- version_line: 8.x
+dependencies:
+- name: node
+  version: 6.14.2
+  uri: https://buildpacks.cloudfoundry.org/dependencies/node/node-6.14.3-linux-x64-cflinuxfs2-c76b27a6.tgz
+  sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  cf_stacks:
+  - cflinuxfs2
